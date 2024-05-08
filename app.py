@@ -9,7 +9,6 @@ st.set_page_config(page_title='Iris Project Saniya',layout='wide')
 # add a title in body of browser
 st.title('Iris Project')
 # take sepal length,sepal width, petal length,
-id = st.number_input('id :',min_value= 0.00,step=0.01)
 sep_len= st.number_input('Sepal Length :',min_value= 0.00,step=0.01)
 sep_wid= st.number_input('Sepal Width :',min_value= 0.00,step=0.01)
 pet_len= st.number_input('Petal Length :',min_value= 0.00,step=0.01)
@@ -45,6 +44,6 @@ if submit:
     scaler_path ='notebook/scaler.pkl'
     model_path ='notebook/model.pkl'
     pred, max_prob = predict_species(scaler_path,model_path)
-    st.subheader(f'Predicted Species is :{pred[0]}' )
+    st.subheader(f'Predicted Species is :{pred}' )
     st.subheader(f'Probability of Prediction : {max_prob :4f}')
     st.progress(max_prob)
